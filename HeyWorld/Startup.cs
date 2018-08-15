@@ -39,9 +39,20 @@ namespace HeyWorld
             {
                 app.UseHsts();
             }
+            
+            
 
             app.UseHttpsRedirection();
             app.UseMvc();
+        }
+    }
+
+    public class HomeController : Controller
+    {
+        [HttpGet("/")]
+        public string SayHey()
+        {
+            return "Hey, world!";
         }
     }
 }
